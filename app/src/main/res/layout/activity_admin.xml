@@ -38,7 +38,7 @@ android:layout_height="wrap_content">
     <ExpandableListView
         android:id="@+id/e1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
         android:divider="@null"
         android:dividerHeight="0dp"
@@ -76,6 +76,29 @@ android:layout_height="wrap_content">
         android:text="Send"
         android:textColor="@color/text_color"
         />
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+
+        >
+
+        s
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/write_to_other_user"
+            android:text="Write to other user"
+            />
+
+
+
+    </RelativeLayout>
+
+
+
 
 
 </LinearLayout>

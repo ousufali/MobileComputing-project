@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 // _____________+++++++++++++++++++++++++++++++++++++++++++++++++
-//        Intent intent = new Intent(getApplicationContext(), AdminActivity.class );
-//        startActivity(intent);
+        Intent intent = new Intent(getApplicationContext(), AdminActivity.class );
+        startActivity(intent);
 
 //        -------------------------------------------------------------------
         setContentView(R.layout.login_register);

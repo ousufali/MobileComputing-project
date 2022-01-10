@@ -68,8 +68,7 @@ public class activity_admin_view_messages extends AppCompatActivity {
         write_messages.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AdminActivity.class );
-                startActivity(intent);
+                finish();
             }
         });
 
