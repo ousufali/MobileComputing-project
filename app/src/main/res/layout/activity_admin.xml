@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+android:orientation="vertical"
+android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <Button
+            android:id="@+id/temp"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="Writing messaages"
+            android:enabled="false"
+            android:textColor="@color/text_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/view_message"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="View messages"
+            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/temp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ExpandableListView
+        android:id="@+id/e1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        />
+
+
+    <TextView
+        android:id="@+id/selected_user"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/selected_user"
+        android:layout_marginStart="40dp"
+        />
+
+    <EditText
+        android:id="@+id/user_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="2dp"
+        android:lines="12"
+        android:maxLines="15"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:paddingStart="4dp"
+        android:hint="Write message here."
+
+
+        />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:id="@+id/send_message_button"
+        android:layout_marginStart="300dp"
+        android:text="Send"
+        android:textColor="@color/text_color"
+        />
+
+
+</LinearLayout>

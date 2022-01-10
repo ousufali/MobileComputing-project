@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/li1"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/rounded_corner_view_expandablelist"
+        android:padding="1dp"
+
+
+        />
+
+    <Button
+        android:id="@+id/remove_user"
+        android:layout_width="75dp"
+        android:layout_height="35dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/rounded_corner_view"
+        android:text="Remove"
+        android:padding="1dp"
+
+
+        />
+
+</LinearLayout>
