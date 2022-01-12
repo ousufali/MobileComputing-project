@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    >
+
+
+
+    <TextView
+        android:id="@+id/TextView"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:padding="10dip"
+        android:textSize="14dp"
+        android:textColor="@color/text_color"
+        android:background="@drawable/rounded_corner_view"
+
+        android:layout_margin="4dp"
+
+        />
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:id="@+id/remove_user_from_db"
+
+        android:text="remove"
+        android:background="@drawable/rounded_main_view"
+        android:textColor="@color/text_color"
+
+        android:layout_margin="4dp"
+        />
+
+</LinearLayout>

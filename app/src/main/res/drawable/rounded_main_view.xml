@@ -11,5 +11,6 @@
     <!---->
     <!--    - This is the background color-->
     <solid android:color="@color/main_background" />
+
     <!---->
 </shape>

@@ -1,5 +1,6 @@
 package com.example.project;import android.os.Bundle;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,7 +18,15 @@ public class ListData {
         List<String> users_username_list = new ArrayList<String>();
 
         for(int i=0; i<users.size(); i++){
-            users_username_list.add(users.get(i).getUsername());
+            if(users.get(i).getUsername().equals("admin")){
+                System.out.println("---------------------------------------------");
+                System.out.println("Admin found.");
+
+                System.out.println("---------------------------------------------");
+
+            }else {
+                users_username_list.add(users.get(i).getUsername());
+            }
         }
 
 
@@ -35,7 +44,15 @@ public class ListData {
         List<String> users_username_list = new ArrayList<String>();
 
         for(int i=0; i<users.size(); i++){
-            users_username_list.add(users.get(i).getUsername());
+            if(users.get(i).getUsername().equals("admin")){
+                System.out.println("---------------------------------------------");
+                System.out.println("Admin found.");
+
+                System.out.println("---------------------------------------------");
+
+            }else {
+                users_username_list.add(users.get(i).getUsername());
+            }
         }
 
 

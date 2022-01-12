@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
  import android.content.Intent;
  import android.os.Bundle;
-import android.view.View;
+ import android.text.Editable;
+ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+ import android.widget.ExpandableListView;
+ import android.widget.TextView;
  import android.widget.Toast;
 
  import java.util.Date;
@@ -28,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 // _____________+++++++++++++++++++++++++++++++++++++++++++++++++
-        Intent intent = new Intent(getApplicationContext(), AdminActivity.class );
-        startActivity(intent);
+//        Intent intent = new Intent(getApplicationContext(), RemoveUser.class );
+//        startActivity(intent);
 
 //        -------------------------------------------------------------------
         setContentView(R.layout.login_register);
@@ -44,34 +46,10 @@ public class MainActivity extends AppCompatActivity {
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                String username_value = user.getText().toString();
-                String password_value = password.getText().toString();
-
-                if(username_value.length()<3  || password_value.length() < 5)
-                {
-
-                    Toast.makeText(getApplicationContext(),"Username or Password is not provided or their length is less then 3,5",Toast.LENGTH_SHORT).show();
-                }else{
-                    if(databaseHelper.isUserExist(username_value)){
-                        Toast.makeText(getApplicationContext(),"Username already exist",Toast.LENGTH_SHORT).show();
-
-                    }else {
-                        UserModel userModel=new UserModel();
-                        userModel.setUsername(username_value);
-                        userModel.setPassword(password_value);
-
-                        databaseHelper.AddUser(userModel);
-
-                        user.setText("");
-                        password.setText("");
-//                        refreshData();
-                    }
-
-
-                }
-
+            public void onClick(View view) {
+                ShowSignUpDialog();
             }
+
         });
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -114,6 +92,50 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void ShowSignUpDialog() {
 
+        AlertDialog.Builder al=new AlertDialog.Builder(MainActivity.this);
+        View view=getLayoutInflater().inflate(R.layout.signup_dialog,null);
+
+        EditText user = view.findViewById(R.id.user);
+        EditText password =view.findViewById(R.id.password);
+        Button signup = view.findViewById(R.id.signup_button);
+
+        al.setView(view);
+
+        final AlertDialog alertDialog=al.show();
+
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String username_value = user.getText().toString();
+                String password_value = password.getText().toString();
+
+                if(username_value.length()<3  || password_value.length() < 5)
+                {
+
+                    Toast.makeText(getApplicationContext(),"Username or Password is not provided or their length is less then 3,5",Toast.LENGTH_SHORT).show();
+                }else{
+                    if(databaseHelper.isUserExist(username_value)){
+                        Toast.makeText(getApplicationContext(),"Username already exist",Toast.LENGTH_SHORT).show();
+
+                    }else {
+                        UserModel userModel=new UserModel();
+                        userModel.setUsername(username_value);
+                        userModel.setPassword(password_value);
+
+                        databaseHelper.AddUser(userModel);
+
+                        user.setText("");
+                        password.setText("");
+                        alertDialog.dismiss();
+                    }
+
+
+                }
+
+            }
+        });
+    }
 
 }

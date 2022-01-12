@@ -6,6 +6,17 @@
     android:orientation="vertical"
     android:layout_height="wrap_content">
 
+    <Button
+        android:id="@+id/remove_user"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Remove User"
+        android:textColor="@color/text_color"
+        android:background="@drawable/rounded_main_view"
+
+        android:layout_margin="4dp"
+    />
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -32,6 +43,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/temp"
             app:layout_constraintTop_toTopOf="parent" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

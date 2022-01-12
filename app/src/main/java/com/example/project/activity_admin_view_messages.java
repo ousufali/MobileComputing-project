@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class activity_admin_view_messages extends AppCompatActivity {
-    Button  write_messages;
+    Button  write_messages, remove_user;
     DBHelper databaseHelper;
     TextView selected_user, message_header_hint;
 
@@ -36,6 +36,7 @@ public class activity_admin_view_messages extends AppCompatActivity {
 
 
         write_messages = findViewById(R.id.write_message);
+        remove_user = findViewById(R.id.remove_user);
         selected_user = findViewById(R.id.selected_user);
         databaseHelper=new DBHelper(activity_admin_view_messages.this);
         List<UserModel> db_users  =databaseHelper.getALLUsers();
@@ -72,6 +73,13 @@ public class activity_admin_view_messages extends AppCompatActivity {
             }
         });
 
+        remove_user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), RemoveUser.class );
+                startActivity(intent);
+            }
+        });
 
     }
 

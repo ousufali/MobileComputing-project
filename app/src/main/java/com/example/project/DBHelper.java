@@ -148,11 +148,39 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public void deleteUser(String user){
+    public void removeUser(String selected_user){
+        System.out.println("====------------=======---------");
+        System.out.println(selected_user);
+        System.out.println("====------------=======---------");
+
         SQLiteDatabase db=this.getWritableDatabase();
-        db.delete(TABLE_NAME,user+"=?",new String[]{user});
+        db.delete(TABLE_NAME,username+"=?",new String[]{selected_user});
+        db.delete(Message_TABLE_NAME,username+"=?",new String[]{selected_user});
+
         db.close();
     }
+//    public List<UserModel> getAllUsers(String selected_user_substring){
+//        List<UserModel> userModelList = new ArrayList<>();
+//        String query = "SELECT * from "+TABLE_NAME;
+//        SQLiteDatabase db = this.getReadableDatabase();
+//        Cursor cursor =  db.rawQuery(query,null);
+//        if(cursor.moveToFirst()){
+//            if(cursor.getString(0).toString().indexOf(selected_user_substring) != -1){
+//                do{
+//                    UserModel userModel = new UserModel(
+//                            cursor.getString(0),
+//                            cursor.getString(1)
+//                    );
+//                    userModelList.add(userModel);
+//                }while (cursor.moveToNext());
+//            }else {
+//                cursor.moveToNext();
+//            }
+//
+//        }
+//        db.close();
+//        return userModelList;
+//    }
 
 //    #####################################################################################################################
 
@@ -193,4 +221,6 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
         return message_list;
     }
+
+
 }

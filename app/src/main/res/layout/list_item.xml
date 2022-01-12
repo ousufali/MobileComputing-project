@@ -6,11 +6,14 @@
     <TextView
         android:id="@+id/li1"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_margin="5dp"
         android:padding="1dp"
         android:background="@drawable/rounded_corner_view_expandablelist"
 
-
+        android:layout_gravity="center"
+        android:paddingStart="35dp"
+        android:paddingRight="40dp"
+        android:gravity="center_vertical"
         />
 </LinearLayout>
